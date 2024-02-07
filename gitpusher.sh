@@ -55,7 +55,7 @@ echo "G     G  III     TTT    P       U     U       S  H    H  E      R  R  "
 echo " GGGGG   III     TTT    P        UUUUU   SSSSSS  H    H  EEEEE  R   RR"
 echo ""
 
-script_filename="gitpusher.sh"
+script_filename="push.sh"
 gitignore_file=".gitignore"
 
 if [ ! -f "$gitignore_file" ]; then
