@@ -27,6 +27,10 @@ add_modified_files() {
     done
 }
 
+remove_gitpusher() {
+    git rm --cached -r gitpusher
+}
+
 commit_and_push() {
     read -p "Enter your commit message: " commit_message
     if [ -z "$commit_message" ]; then
@@ -43,6 +47,7 @@ add_modified_files
     exit 1 
     fi
 git status --short
+remove_gitpusher
 commit_and_push
 echo ""
 echo "Look at you, pushing code like a champ! All done and dusted!"
@@ -54,21 +59,3 @@ echo "G  GGGG  III     TTT    PPPPPP  U     U  SSSSSS  HHHHHH  EEEE   RRRRR "
 echo "G     G  III     TTT    P       U     U       S  H    H  E      R  R  "
 echo " GGGGG   III     TTT    P        UUUUU   SSSSSS  H    H  EEEEE  R   RR"
 echo ""
-
-script_filename="push.sh"
-gitignore_file=".gitignore"
-
-if [ ! -f "$gitignore_file" ]; then
-    touch "$gitignore_file"
-fi
-
-if grep -qxF "$script_filename" "$gitignore_file" >/dev/null 2>&1; then
-    :  
-else
-    if [ ! -s "$gitignore_file" ] || [ -z "$(tail -c 1 "$gitignore_file")" ]; then
-        echo "$script_filename" >> "$gitignore_file"
-    else
-        echo "" >> "$gitignore_file"
-        echo "$script_filename" >> "$gitignore_file"
-    fi
-fi
