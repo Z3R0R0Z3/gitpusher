@@ -18,7 +18,7 @@ This command will create a new directory named gitpusher in your project directo
 Use the cp command to copy the contents of the gitpusher directory into your main project directory. Assuming your gitpusher directory contains the push.sh script, you can do this:
 
    ```bash
-   cp -r path/to/gitpusher/* .
+   cp -r gitpusher/* .
    ```
    ``Replace path/to/gitpusher with the actual path to your gitpusher directory.`` 
 
