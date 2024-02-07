@@ -1,6 +1,6 @@
 # GITPUSHER
 
-This repository contains a script named `gitpusher.sh` that simplifies the process of staging, committing, and pushing changes to a Git repository.
+This repository contains a script named `push.sh` that simplifies the process of staging, committing, and pushing changes to a Git repository.
 
 ## Usage
 
@@ -18,13 +18,13 @@ This command will create a new directory named gitpusher in your project directo
 Ensure that the gitpusher.sh script has executable permissions. If not, you can grant it using the following command:
 
    ```bash
-   chmod +x gitpusher.sh
+   chmod +x gitpusher/push.sh
    ```
    
 4. **Run the Script:**
 Execute the script by running the following command:
    ```bash
-   ./gitpusher.sh
+   ./gitpusher/push.sh
    ```
 
 
