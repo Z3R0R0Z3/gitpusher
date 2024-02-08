@@ -1,6 +1,23 @@
 #!/bin/bash
+SAME_FOLDER=false
+
+while [ $# -gt 0 ]; do
+    case "$1" in
+        --same-folder)
+            SAME_FOLDER=true
+            shift
+            ;;
+        *)
+            echo "Unknown option: $1"
+            exit 1
+            ;;
+    esac
+done
+
 REPO_ROOT=$(cd "$(dirname "$0")"/.. && pwd)
-cd $REPO_ROOT
+if ! $SAME_FOLDER; then  
+    cd $REPO_ROOT
+fi
 script_filename="gitpusher"
 gitignore_file=".gitignore"
 
