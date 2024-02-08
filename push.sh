@@ -18,7 +18,7 @@ REPO_ROOT=$(cd "$(dirname "$0")"/.. && pwd)
 if ! $SAME_FOLDER; then  
     cd $REPO_ROOT
 fi
-script_filename="gitpusher/"
+script_filename="/gitpusher/"
 gitignore_file=".gitignore"
 
 if [ ! -f "$gitignore_file" ]; then
